@@ -3,7 +3,10 @@ C# Code from  [Swashbuckle.AspNetCore.SwaggerUI](https://github.com/domaindriven
 Ui Code from https://github.com/jensoleg/swagger-ui
 
 本项目基于Swashbuckle.AspNetCore.SwaggerUI 更改而来,
-使用界面比较好看的 https://github.com/jensoleg/swagger-ui
+使用界面比较好看的 https://github.com/jensoleg/swagger-ui.
+
+UI示例:[Auth0 api explorer](https://auth0.com/docs/api/management/v2)
+
 界面部分支持中文展示.
 
 使用方式:
