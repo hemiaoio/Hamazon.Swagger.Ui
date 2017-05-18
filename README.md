@@ -1,13 +1,19 @@
 # Hamazon.Swagger.Ui
+
 C# Code from  [Swashbuckle.AspNetCore.SwaggerUI](https://github.com/domaindrivendev/Swashbuckle.AspNetCore/tree/master/src/Swashbuckle.AspNetCore.SwaggerUI) .
 Ui Code from https://github.com/jensoleg/swagger-ui
 
 本项目基于Swashbuckle.AspNetCore.SwaggerUI 更改而来,
+
 使用界面比较好看的 https://github.com/jensoleg/swagger-ui.
+
+在UI库上增加了**部分语言切换**和**过时接口**标识.
+
+fork地址:https://github.com/hemiaoio/swagger-ui
 
 UI示例:[Auth0 api explorer](https://auth0.com/docs/api/management/v2)
 
-界面部分支持中文展示.
+参照`Swashbuckle.AspNetCore.SwaggerUI`
 
 使用方式:
 
