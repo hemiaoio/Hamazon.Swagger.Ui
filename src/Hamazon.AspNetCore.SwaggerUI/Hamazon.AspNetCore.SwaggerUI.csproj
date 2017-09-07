@@ -11,12 +11,12 @@
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <PackageId>Hamazon.AspNetCore.SwaggerUI</PackageId>
     <PackageTags>swagger;documentation;discovery;help;webapi;aspnet;aspnetcore</PackageTags>
-    <Version>1.1.4</Version>
+    <Version>1.1.5</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="Template\index.html" Exclude="bin\**;obj\**;**\*.xproj;node_modules\**;packages\**;@(EmbeddedResource)" />
+    <EmbeddedResource Include="bower_components\swagger-ui\dist\**\*.*;Template\index.html" Exclude="bin\**;obj\**;**\*.xproj;node_modules\**;packages\**;@(EmbeddedResource)" />
   </ItemGroup>
 
   <ItemGroup>
