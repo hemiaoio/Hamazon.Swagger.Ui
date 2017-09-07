@@ -8,9 +8,9 @@ namespace Hamazon.AspNetCore.SwaggerUI.Application
     public class SwaggerUIFileProvider : IFileProvider
     {
         private const string StaticFilesNamespace =
-            "Hamazon.AspNetCore.SwaggerUI.bower_components.swagger_ui_b.dist";
+            "Hamazon.AspNetCore.SwaggerUI.bower_components.swagger_ui.dist";
         private const string IndexResourceName =
-            "Hamazon.AspNetCore.SwaggerUI.Template.index-b.html";
+            "Hamazon.AspNetCore.SwaggerUI.Template.index.html";
 
         private readonly Assembly _thisAssembly;
         private readonly EmbeddedFileProvider _staticFileProvider;

@@ -2,7 +2,7 @@
 
   <PropertyGroup>
     <Description>Middleware to expose an embedded version of the swagger-ui from an ASP.NET Core application</Description>
-    <TargetFrameworks>net451;netstandard1.6</TargetFrameworks>
+    <TargetFrameworks>net461;netstandard2.0</TargetFrameworks>
     <NoWarn>$(NoWarn);1591</NoWarn>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
     <AssemblyName>Hamazon.AspNetCore.SwaggerUI</AssemblyName>
@@ -11,21 +11,18 @@
     <PublicSign Condition=" '$(OS)' != 'Windows_NT' ">true</PublicSign>
     <PackageId>Hamazon.AspNetCore.SwaggerUI</PackageId>
     <PackageTags>swagger;documentation;discovery;help;webapi;aspnet;aspnetcore</PackageTags>
-    <PackageTargetFallback Condition=" '$(TargetFramework)' == 'netstandard1.6' ">$(PackageTargetFallback);dnxcore50;portable-net451+win8</PackageTargetFallback>
-    <Version>1.1.3</Version>
+    <Version>1.1.4</Version>
     <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
   </PropertyGroup>
 
   <ItemGroup>
-    <EmbeddedResource Include="bower_components\swagger-ui\dist\**\*.*;Template\index.html" Exclude="bin\**;obj\**;**\*.xproj;packages\**;@(EmbeddedResource)" />
-    <EmbeddedResource Include="bower_components\swagger-ui-b\dist\**\*.*;Template\index-b.html" Exclude="bin\**;obj\**;**\*.xproj;node_modules\**;packages\**;@(EmbeddedResource)" />
+    <EmbeddedResource Include="Template\index.html" Exclude="bin\**;obj\**;**\*.xproj;node_modules\**;packages\**;@(EmbeddedResource)" />
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="Microsoft.AspNetCore.Routing" Version="1.0.0" />
-    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="1.0.0" />
-    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="1.0.0" />
-    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="Microsoft.AspNetCore.StaticFiles" Version="2.0.0" />
+    <PackageReference Include="Microsoft.Extensions.FileProviders.Embedded" Version="2.0.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="10.0.3" />
   </ItemGroup>
 
   <ItemGroup Condition=" '$(TargetFramework)' == 'net451' ">
