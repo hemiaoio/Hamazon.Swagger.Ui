@@ -60,7 +60,8 @@ Web Startup.cs
                 foreach(var filePath in xmlFilePaths) {
                     var xmlFilePath = Path.Combine(PlatformServices.Default.Application.ApplicationBasePath, filePath);
                     if(File.Exists(xmlFilePath)) {
-                        c.IncludeXmlComments(xmlFilePath);
+                        // 新版 Swashbuckle.AspNetCore.SwaggerGen 内置了 Controller 描述加载功能，默认为 false,这里手动指定为true即可
+                        c.IncludeXmlComments(xmlFilePath,true);
                     }
                 }
             });
@@ -122,30 +123,4 @@ Web Startup.cs
         }
     });
 })();
-```
-
-4.如果要显示Controller的自定义名称,使用DynamicApiDocumentFilter设置.
-DynamicApiDocumentFilter.cs
-
-```csharp
-using Swashbuckle.AspNetCore.Swagger;
-using Swashbuckle.AspNetCore.SwaggerGen;
-namespace Demo.Swagger {
-    public class DynamicApiDocumentFilter: IDocumentFilter {
-        public void Apply(SwaggerDocument swaggerDoc, DocumentFilterContext context) {
-             Dictionary<string, string> tags = new Dictionary<string, string>();
-            tags.Add("Product", "商品操作");
-            tags.Add("Order", "订单操作");
-            tags.Add("User", "用户操作");
-            tags.Add("Session", "回话信息");
-            tags.Add("Role", "角色操作");
-            ...
-            //自行匹配自己的Controller名字即可
-            swaggerDoc.Tags = new List<Tag>();
-            tags.ForEach(c => {
-                swaggerDoc.Tags.Add(new Tag() {Name = c.Key, Description = c.Value});
-            });
-        }
-    }
-}
 ```
